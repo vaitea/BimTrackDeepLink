@@ -13,7 +13,7 @@ express()
           "apps": [],
           "details": [{
               "appID": "TLTF7FJX27.com.bimtrack.bimtrack",
-              "paths": ["/*"]
+              "paths": ["*"]
               }
           ]
       }

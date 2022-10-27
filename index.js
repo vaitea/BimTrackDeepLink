@@ -10,13 +10,29 @@ express()
   .get('/.well-known/apple-app-site-association', function(req, res) {
     res.json([{
       "applinks": {
-          "apps": [],
-          "details": [{
-              "appID": "TLTF7FJX27.com.bimtrack.bimtrack",
-              "paths": ["*"]
-              }
-          ]
+        "details": [
+          {
+            "appIDs": [
+              "TLTF7FJX27.com.bimtrack.bimtrack",
+            ],
+            "components": [
+              {
+                "/": "/*",
+                "comment": "Matches any URL with a path that starts with /."
+              },
+            ]
+          }
+        ]
+      },
+      "webcredentials": {
+        "apps": [
+          "TLTF7FJX27.com.bimtrack.bimtrack"
+        ]
+      },
+      "appclips": {
+        "apps": []
       }
+    }
   }  
   ]);
   })

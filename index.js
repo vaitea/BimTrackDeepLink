@@ -8,20 +8,10 @@ express()
   .set('view engine', 'ejs')
   .get('/', (req, res) => res.render('pages/index'))
   .get('/.well-known/apple-app-site-association', function(req, res) {
-    res.json([
-       {
-          "applinks":{
-             "apps":[],
-             "details":[
-                {
-                   "appID":"TLTF7FJX27.com.bimtrack.bimtrack",
-                   "paths":[
-                      "*"
-                   ]
-                }
-             ]
-          }
-       }
-    ]);
+    const aasa = path.join(__dirname, 'apple-app-site-association')
+
+    res.set('Content-Type', 'application/pkcs7-mime')
+    res.status(200)
+    res.sendFile(aasa)
   })
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))

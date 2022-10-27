@@ -1,0 +1,11 @@
+[{
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+        "namespace": "android_app",
+        "package_name": "com.bimtrack.bimtrack",
+        "sha256_cert_fingerprints": [
+            "F7:8F:2F:F3:75:C6:7C:E5:54:D9:AB:B8:6D:37:70:EB:A1:B1:75:8E:D5:76:3C:87:A0:DA:33:EA:D4:12:68:03"
+        ]
+    }
+}]
+    

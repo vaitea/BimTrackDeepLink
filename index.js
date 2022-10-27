@@ -14,4 +14,10 @@ express()
     res.status(200)
     res.sendFile(aasa)
   })
+  .get('/.well-known/assetlinks.json', function(req, res) {
+    const aasa = path.join(__dirname, 'apple-app-site-association')
+
+    res.status(200)
+    res.sendFile(aasa)
+  })
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))

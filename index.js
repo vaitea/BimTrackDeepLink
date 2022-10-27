@@ -8,31 +8,20 @@ express()
   .set('view engine', 'ejs')
   .get('/', (req, res) => res.render('pages/index'))
   .get('/.well-known/apple-app-site-association', function(req, res) {
-    res.json([{
-      "applinks": {
-        "details": [
-          {
-            "appIDs": [
-              "TLTF7FJX27.com.bimtrack.bimtrack",
-            ],
-            "components": [
-              {
-                "/": "/*",
-                "comment": "Matches any URL with a path that starts with /."
-              },
-            ]
+    res.json([
+       {
+          "applinks":{
+             "apps":[],
+             "details":[
+                {
+                   "appID":"TLTF7FJX27.com.bimtrack.bimtrack",
+                   "paths":[
+                      "*"
+                   ]
+                }
+             ]
           }
-        ]
-      },
-      "webcredentials": {
-        "apps": [
-          "TLTF7FJX27.com.bimtrack.bimtrack"
-        ]
-      },
-      "appclips": {
-        "apps": []
-      }
-    }
-  ]);
+       }
+    ]);
   })
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
